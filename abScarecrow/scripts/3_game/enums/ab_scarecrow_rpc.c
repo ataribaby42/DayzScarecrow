@@ -1,0 +1,4 @@
+enum abScarecrowRPC 
+{
+	RPC_AB_SCARECROW_SOUND_REQUEST
+}
