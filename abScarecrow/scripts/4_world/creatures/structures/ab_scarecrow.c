@@ -72,14 +72,7 @@ class ab_Scarecrow
 	{
 		if (scarecrowObjectBase)
 		{
-			if(Get_ab_ScarecrowManager() && Get_ab_ScarecrowManager().GetLessIntrusiveAmbientSounds())
-			{
-				scarecrowObjectBase.RequestPlayLessIntrusiveAmbient();
-			}
-			else
-			{
-				scarecrowObjectBase.RequestPlayAmbient();
-			}
+			scarecrowObjectBase.RequestPlayAmbient();
 		}
 	}
 	

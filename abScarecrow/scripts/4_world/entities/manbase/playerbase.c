@@ -12,8 +12,6 @@ modded class PlayerBase extends ManBase
 	{
 		super.Init();
 		
-		ab_ScarecrowKillTimer = 0;
-		ab_ScarecrowUncoTimer = 0;
 		ab_ScarecrowUnco = false;
 		ab_ScarecrowKillRequested = false;
 	}
@@ -26,21 +24,18 @@ modded class PlayerBase extends ManBase
 		{
 			if (ab_ScarecrowKillRequested)
 			{
-				ab_ScarecrowKillTimer += timeSlice;
-				
-				if (ab_ScarecrowKillTimer >= 0.50)
+				if ((GetGame().GetTime() / 1000) >= ab_ScarecrowKillTimer)
 				{
-					ab_ScarecrowKillTimer = 0;	
 					ab_ScarecrowKillRequested = false;
 					PlayerIdentity identity = GetIdentity();
 					
 					if (identity)
 					{
-						Print("Player <" + GetIdentity().GetName() + "> has been killed by scarecrow <" + ab_ScarecrowKillName + ">.");
+						Print("Player <" + GetIdentity().GetName() + "> has been caught by scarecrow <" + ab_ScarecrowKillName + ">.");
 					}
 					else
 					{
-						Print("Player <unknown> has been killed by scarecrow <" + ab_ScarecrowKillName + ">.");
+						Print("Player <unknown> has been caught by scarecrow <" + ab_ScarecrowKillName + ">.");
 					}
 					
 					if (GetAllowDamage())
@@ -50,6 +45,7 @@ modded class PlayerBase extends ManBase
 						SetHealth("GlobalHealth", "Health", currenthealth);
 						RequestUnconsciousness(true);
 						ab_ScarecrowRandomItemSteal(ab_ScarecrowKillName);
+						ab_ScarecrowUncoTimer = (GetGame().GetTime() / 1000) + 10;
 						ab_ScarecrowUnco = true;
 					}
 
@@ -59,16 +55,12 @@ modded class PlayerBase extends ManBase
 			
 			if (ab_ScarecrowUnco)
 			{
-				ab_ScarecrowUncoTimer += timeSlice;
-				
-				if (ab_ScarecrowUncoTimer >= 10)
+				if ((GetGame().GetTime() / 1000) >= ab_ScarecrowUncoTimer)
 				{
 					RequestUnconsciousness(false);
-					ab_ScarecrowUncoTimer = 0;
 					ab_ScarecrowUnco = false;
 				}
 			}
-
 		}
 	}
 	
@@ -127,6 +119,7 @@ modded class PlayerBase extends ManBase
 
 	void RequestScarecrowKill(string name)
 	{
+		ab_ScarecrowKillTimer = (GetGame().GetTime() / 1000) + 0.5;
 		ab_ScarecrowKillRequested = true;
 		ab_ScarecrowKillName = name;
 	}

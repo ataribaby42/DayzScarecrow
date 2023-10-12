@@ -57,15 +57,6 @@ class ab_scarecrow_model_base extends BuildingSuper
 		}
 	}
 	
-	void RequestPlayLessIntrusiveAmbient()
-	{
-		if (GetGame() && GetGame().IsServer())
-		{
-			Param1<string> p = new Param1<string>("ambientLess");
-			GetGame().RPCSingleParam(this, abScarecrowRPC.RPC_AB_SCARECROW_SOUND_REQUEST, p, true);
-		}
-	}
-	
 	void RequestPlayCreepy()
 	{
 		if (GetGame() && GetGame().IsServer())
@@ -101,13 +92,6 @@ class ab_scarecrow_model_base extends BuildingSuper
 		if(m_AmbientFx && m_AmbientFx.IsSoundPlaying()) return;
 		
 		PlaySoundSet(m_AmbientFx, "ab_scarecrow_ambient_SoundSet", 0.1, 0.1);
-	}
-	
-	void PlayLessIntrusiveAmbient()
-	{
-		if(m_AmbientFx && m_AmbientFx.IsSoundPlaying()) return;
-		
-		PlaySoundSet(m_AmbientFx, "ab_scarecrow_less_intrusive_ambient_SoundSet", 0.1, 0.1);
 	}
 	
 	void PlayCreepy()
@@ -146,10 +130,6 @@ class ab_scarecrow_model_base extends BuildingSuper
 						else if (soundRequest.param1 == "ambient")
 						{
 							PlayAmbient();
-						}
-						else if (soundRequest.param1 == "ambientLess")
-						{
-							PlayLessIntrusiveAmbient();
 						}
 						else if (soundRequest.param1 == "creepy")
 						{

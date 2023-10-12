@@ -20,8 +20,7 @@ class CfgMods
 		dependencies[]=
 		{
 			"Game",
-			"World",
-			"Mission"
+			"World"
 		};
 		class defs
 		{
@@ -39,14 +38,6 @@ class CfgMods
 				files[]=
 				{
 					"abScarecrow/scripts/4_world"
-				};
-			};
-			class missionScriptModule
-			{
-				value="";
-				files[]=
-				{
-					"abScarecrow/scripts/5_mission"
 				};
 			};
 		};
@@ -144,19 +135,6 @@ class CfgSoundShaders
 		range=300;
 		volume=1.8;
 	};
-	class ab_scarecrow_less_intrusive_ambient_SoundShader
-	{
-		samples[]=
-		{
-			
-			{
-				"abScarecrow\sounds\ambient4",
-				1
-			}
-		};
-		range=300;
-		volume=1.5;
-	};
 	class ab_scarecrow_creepy_SoundShader
 	{
 		samples[]=
@@ -249,13 +227,6 @@ class CfgSoundSets
 		soundShaders[]=
 		{
 			"ab_scarecrow_ambient_SoundShader"
-		};
-	};
-	class ab_scarecrow_less_intrusive_ambient_SoundSet
-	{
-		soundShaders[]=
-		{
-			"ab_scarecrow_less_intrusive_ambient_SoundShader"
 		};
 	};
 	class ab_scarecrow_creepy_SoundSet
