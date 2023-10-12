@@ -1,7 +1,7 @@
 # Scarecrow
 <p>Scarecrow creature mod for Dayz, sort of Designators and Will-o'-the-Wisp crossover. Scarecrow tries to catch (by teleporting) player when he turns back to it and charge into him causing unconscious state for 10 seconds, small random damage and optionally steals one random item from player. After charge, Scarecrow is idle for 20 seconds giving 10s for recovery and escape. It is possible to hide from it or just run away. It makes player aware of its presence with crow sounds.</p>
 <p>https://youtu.be/9eOUwGqYvGM</p>
-<p>Scarecrow code has been written reusing some parts from my Designators and Will-o'-the-Wisp mods. All sounds and textures are from free sources. Scarecrow model is vanilla dayz model.</p>
+<p>Scarecrow code has been written reusing some parts from my Designators and Will-o'-the-Wisp mods. All sounds are from free sources. Scarecrow model is vanilla dayz model.</p>
 
 ### INSTALLATION AND SETUP
 This is both server and client mod. Client needs just subscribe to mod or adds it manually. 
