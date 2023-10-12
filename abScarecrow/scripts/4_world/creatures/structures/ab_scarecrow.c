@@ -155,7 +155,7 @@ class ab_Scarecrow
 		if (playerObj && scarecrowObj)
 		{
 			angles = vector.Direction(playerObj.GetPosition(), scarecrowObj.GetPosition()).Normalized().VectorToAngles();
-			orientation = Vector(angles[0] + 25, Math.RandomFloatInclusive(-2, 2), Math.RandomFloatInclusive(-2, 2));
+			orientation = Vector(angles[0] + 25, Math.RandomFloatInclusive(-5, 5), Math.RandomFloatInclusive(-5, 5));
 			int bone_index = playerObj.GetBoneIndexByName("Head");
 			float bone_rot[4];
 			playerObj.GetBoneRotationWS(bone_index, bone_rot);

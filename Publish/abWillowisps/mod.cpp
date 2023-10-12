@@ -5,6 +5,6 @@ logo = "abScarecrow/icons/icon_s.paa";
 logoOver = "abScarecrow/icons/icon_s.paa";
 tooltip = "$STR_abScarecrow_mod_name";
 overview = "$STR_abScarecrow_mod_overview";
-action = "https://steamcommunity.com/sharedfiles/filedetails/?id=2097380865";
+action = "https://steamcommunity.com/sharedfiles/filedetails/?id=3048316138";
 author = "ataribaby";
-version = "0.99";
+version = "1.1";
