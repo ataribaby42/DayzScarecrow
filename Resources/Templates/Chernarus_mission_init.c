@@ -1,12 +1,12 @@
-void SpawnWillowisp()
+void SpawnScarecrow()
 {
-	ab_Willowisp_Stealable_Items.Clear();
-	ab_Willowisp_Stealable_Items.Insert("NVGoggles");
-	ab_Willowisp_Stealable_Items.Insert("GasMask_Filter");
+	ab_Scarecrow_Stealable_Items.Clear();
+	ab_Scarecrow_Stealable_Items.Insert("NVGoggles");
+	ab_Scarecrow_Stealable_Items.Insert("GasMask_Filter");
 	
-	Get_ab_WillowispManager().CreateRandomWillowispController("Shachovka Forrest", "9089.700195 315.509003 7558.310059", 500, 50, Math.RandomIntInclusive(1, 3));
+	Get_ab_ScarecrowManager().CreateRandomScarecrowController("Shachovka Forrest", "9089.700195 315.509003 7558.310059", 500, 50, Math.RandomIntInclusive(1, 3));
 
-	array<string> willowispPositions = {
+	array<string> scarecrowPositions = {
 	"4464.140137 315.640991 8250.669922",
 	"4456.279785 315.337006 8264.139648",
 	"4424.439941 314.873993 8269.299805",
@@ -29,7 +29,7 @@ void SpawnWillowisp()
 	"4553.089844 319.207001 8287.849609",
 	"4471.229980 315.656006 8301.559570"
 	};
-	Get_ab_WillowispManager().CreatePredefinedWillowispController("Veresnik Military Base", "4537.540039 318.433014 8297.910156", 500, willowispPositions );
+	Get_ab_ScarecrowManager().CreatePredefinedScarecrowController("Veresnik Military Base", "4537.540039 318.433014 8297.910156", 500, scarecrowPositions );
 }
 
 void main()
@@ -40,5 +40,5 @@ void main()
 	
 	*/
 	
-	SpawnWillowisp();
+	SpawnScarecrow();
 };
