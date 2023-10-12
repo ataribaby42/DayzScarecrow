@@ -54,7 +54,7 @@ In your init.c before spawning any Scarecrow set items with following code:
 ab_Scarecrow_Stealable_Items.Clear();
 ab_Scarecrow_Stealable_Items.Insert("NVGoggles");
 ab_Scarecrow_Stealable_Items.Insert("BandageDressing");
-ab_Scarecrowp_Stealable_Items.Insert("DisinfectantSpray");
+ab_Scarecrow_Stealable_Items.Insert("DisinfectantSpray");
 ab_Scarecrow_Stealable_Items.Insert("DisinfectantAlcohol");
 ```
 
