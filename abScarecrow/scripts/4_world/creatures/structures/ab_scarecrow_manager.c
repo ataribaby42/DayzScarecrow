@@ -1,14 +1,14 @@
-ab_ScarecrowManager g_ab_ScarecrowManager;
+ref ab_ScarecrowManager g_ab_ScarecrowManager;
 ab_ScarecrowManager Get_ab_ScarecrowManager()
 {
 	if (!g_ab_ScarecrowManager) 
 	{
-		g_ab_ScarecrowManager = ab_ScarecrowManager.Cast(GetGame().CreateObject("ab_ScarecrowManager", "0 0 0"));
+		g_ab_ScarecrowManager = new ab_ScarecrowManager();
 	}
 	return g_ab_ScarecrowManager;
 }
 
-class ab_ScarecrowManager extends ScriptedEntity
+class ab_ScarecrowManager
 {
 	private ref array<ref ab_ScarecrowController> controllers = new array<ref ab_ScarecrowController>();
 	private float ab_ScarecrowsTimeslice;
@@ -17,39 +17,12 @@ class ab_ScarecrowManager extends ScriptedEntity
 	void ab_ScarecrowManager()
 	{
 		Print("Scarecrow Manager started.");
-		SetEventMask(EntityEvent.FRAME);
 	}
 
 	void ~ab_ScarecrowManager()
 	{
 		Print("Scarecrow Manager stopped.");
-		ClearEventMask(EntityEvent.FRAME);
 	}
-	
-	override void EOnFrame(IEntity other, float timeSlice)
-    {
-		if (GetGame() && GetGame().IsServer())
-		{
-			if (GetGame() && GetGame().IsServer())	
-			{
-				ab_ScarecrowsTimeslice += timeSlice;
-				
-				if (ab_ScarecrowsTimeslice >= 5.0)
-				{
-					Get_ab_ScarecrowManager().Update(ab_ScarecrowsTimeslice);
-					ab_ScarecrowsTimeslice = 0;	
-				}
-				
-				ab_ScarecrowsSoundTimeslice += timeSlice;
-				
-				if (ab_ScarecrowsSoundTimeslice >= 2.0)
-				{
-					Get_ab_ScarecrowManager().UpdateSounds(ab_ScarecrowsSoundTimeslice);
-					ab_ScarecrowsSoundTimeslice = 0;	
-				}
-			}
-		}
-    }
 
 	void CreateRandomScarecrowController(string name, vector position, float resetRadius, float radius, int scarecrowCount)
 	{

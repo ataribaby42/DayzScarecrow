@@ -20,7 +20,8 @@ class CfgMods
 		dependencies[]=
 		{
 			"Game",
-			"World"
+			"World",
+			"Mission"
 		};
 		class defs
 		{
@@ -38,6 +39,14 @@ class CfgMods
 				files[]=
 				{
 					"abScarecrow/scripts/4_world"
+				};
+			};
+			class missionScriptModule
+			{
+				value="";
+				files[]=
+				{
+					"abScarecrow/scripts/5_mission"
 				};
 			};
 		};
