@@ -34,7 +34,7 @@ array<string> scarecrowPositions = {
 "4553.089844 319.207001 8287.849609",
 "4471.229980 315.656006 8301.559570"
 };
-Get_ab_ScarecrowManager().CreatePredefinedScarecrowController("Veresnik Military Base", "4537.540039 318.433014 8297.910156", 500, scarecrowpPositions );
+Get_ab_ScarecrowManager().CreatePredefinedScarecrowController("Veresnik Military Base", "4537.540039 318.433014 8297.910156", 500, scarecrowPositions );
 ```
 
 ### API
