@@ -12,7 +12,7 @@ class ab_ScarecrowController
 	private ref array<string> scarecrowPositions = new array<string>();
 	private bool active = false;
 	
-	void ab_ScarecrowController(string Name, vector Position, float ResetRadius, float Radius, int ScarecrowCount, ref array<string> ScarecrowPositions)
+	void ab_ScarecrowController(string Name, vector Position, float ResetRadius, float Radius, int ScarecrowCount, array<string> ScarecrowPositions)
 	{
 		if (!ScarecrowPositions)
 		{
@@ -33,7 +33,7 @@ class ab_ScarecrowController
 		
 		for (int i = 0; i < scarecrowCount; i++)
 		{
-			scarecrows.Insert(new ref ab_Scarecrow(name, position, resetRadius));
+			scarecrows.Insert(new ab_Scarecrow(name, position, resetRadius));
 		}
 		
 		SetupScarecrows();

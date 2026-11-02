@@ -28,15 +28,15 @@ class ab_ScarecrowManager
 	{
 		if (controllers)
 		{
-			controllers.Insert(new ref ab_ScarecrowController(name, position, resetRadius, radius, scarecrowCount, NULL));
+			controllers.Insert(new ab_ScarecrowController(name, position, resetRadius, radius, scarecrowCount, NULL));
 		}
 	}
 	
-	void CreatePredefinedScarecrowController(string name, vector position, float resetRadius, ref array<string> scarecrowPositions)
+	void CreatePredefinedScarecrowController(string name, vector position, float resetRadius, array<string> scarecrowPositions)
 	{
 		if (controllers)
 		{
-			controllers.Insert(new ref ab_ScarecrowController(name, position, resetRadius, 0, scarecrowPositions.Count(), scarecrowPositions));
+			controllers.Insert(new ab_ScarecrowController(name, position, resetRadius, 0, scarecrowPositions.Count(), scarecrowPositions));
 		}
 	}
 	
